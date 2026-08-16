@@ -63,9 +63,9 @@ plotPower <- function(power, rho=0.3){
 
 
 
-plotFDP(df, rho=0.3)
-plotPower(power, rho=0.3)
+plotFDP(df, rho=0.9)
+plotPower(power, rho=0.9)
 
 
-# landscape 10 x 6
+# landscape 10 x 4
 

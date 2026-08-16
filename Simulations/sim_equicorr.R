@@ -142,3 +142,38 @@ simsEqui <- function(m=1000, s=10, deltaPar=1, rho=0, n=50, alpha=0.05, pw=0.95,
 # res <- simsEqui(m=10000, s=20, deltaPar=1.5, rho=0.3, pw=0.95, nSim=10)
 
 
+
+
+# --------------------------------------------
+# PLOT OF REPLICABILITY PATTERN
+# --------------------------------------------
+
+require(ggplot2)
+
+m <- 10000
+s <- 20
+c_values <- c(0.5, 1, 1.5)
+
+df <- do.call(rbind, lapply(c_values, function(c) {
+  delta <- getFixedDelta(m, s, deltaPar=c)
+  data.frame(
+    delta = delta,
+    c = factor(c, levels=c_values)
+  )
+}))
+
+
+
+ggplot(df, aes(x=delta, y=after_stat(count)/sum(after_stat(count)))) +
+  geom_bar(color="black", fill="lightblue") +
+  facet_wrap(~ c, labeller=labeller(c=function(x) paste0("c = ", x)), scales="free_y") +
+  labs(
+    x = expression(delta[j]),
+    y = expression("prop. voxels")
+  ) +
+  theme_bw(base_size=15)
+
+
+# landscape 10 x 4
+
+
