@@ -46,9 +46,6 @@ adafilter <- function(pmat0, pmat, alpha=0.05){
   X <- rep(0,m) # for each feature, keeps track of the greatest gamma
   
   pv <- apply(pmat, 1, function(x) poolPvals(x, 1))
-  tmp <- p.adjust(pv, method="BH")
-  sel <- which(tmp <= alpha)
-  X[sel] <- 1
   
   for(gamma in (2:s)){
     rej <- adaFilter(pmat0, r=gamma, type.I.err="FDR", alpha=alpha)$decision

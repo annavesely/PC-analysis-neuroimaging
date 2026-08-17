@@ -183,3 +183,18 @@ simsSpatial <- function(dim=c(20,20,20), repLev=c(2,5,7,10), s=10, rho=0, n=50, 
 # res <- simsSpatial(dim=c(20,20,20), repLev=c(2,5,7,10), s=10, rho=0.3, pw=0.95, nSim=10)
 
 
+
+
+# --------------------------------------------
+# PLOT OF SIGNAL CONFIGURATION
+# --------------------------------------------
+
+# source("plot_utils_spatial.R")
+
+rep <- getSpatialDelta(dim=c(20,20,20), repLev=c(2,5,7,10))
+rep <- array(rep, dim=c(20,20,20))
+visualizeBrain(rep, x=5, y=5, z=5, maxG=10)
+visualizeBrain(rep, x=15, y=15, z=15, maxG=10)
+
+# landscape 10 x 4
+
