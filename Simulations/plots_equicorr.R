@@ -37,7 +37,7 @@ plotPower <- function(power, rho=0.3){
   power$rho <- NULL
   
   df <- aggregate(power, by=list(power$gamma, power$pw, power$deltaPar), FUN=mean)
-  df <- df[,c("pw","deltaPar","gamma","adaFilter","BHY","coFilter")]
+  df <- df[,c("pw","deltaPar","gamma","adaFilter","BHY","CoFilter")]
   
   df <- pivot_longer(
     df,
@@ -65,8 +65,8 @@ plotPower <- function(power, rho=0.3){
 
 
 
-plotFDP(df, rho=0.3)
-plotPower(power, rho=0.3)
+plotFDP(df, rho=0.9)
+plotPower(power, rho=0.9)
 
 
 # landscape 10 x 6

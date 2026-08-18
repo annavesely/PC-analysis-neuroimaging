@@ -21,5 +21,5 @@ for(deltaPar in c(0.5, 1, 1.5)){
 
 
 fname <- paste0(dirname,"res_equi_", pw*100, ".RData")
-save(df, power, dim, s, repLev, file=fname)
+save(df, power, m, s, file=fname)
 

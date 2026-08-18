@@ -36,7 +36,7 @@ plotPower <- function(power, rho=0.3){
   power$rho <- NULL
   
   df <- aggregate(power, by=list(power$gamma, power$pw), FUN=mean)
-  df <- df[,c("pw","gamma","adaFilter","BHY","coFilter")]
+  df <- df[,c("pw","gamma","adaFilter","BHY","CoFilter")]
   
   df <- pivot_longer(
     df,
